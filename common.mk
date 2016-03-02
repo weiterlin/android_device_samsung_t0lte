@@ -33,7 +33,9 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.SHV-E250S.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.SHV-E250L.rc \
+    $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.SHV-E250K.rc \
     $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:recovery/root/ueventd.smdk4x12.rc
 
 # Audio
@@ -78,8 +80,9 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1
-
+    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
+	ro.config.vc_call_vol_step=8
+             
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
